@@ -8,6 +8,9 @@ most important, helps you to visualize untraslated strings too.
 This is particularly useful when internationalization is being added to a
 project.
 
+Author: Santiago Gabriel Romero
+
+Contact: sromero@machinalis.com
 
 How does it works
 -----------------
@@ -38,7 +41,7 @@ translated content with an HTML div with the following properties:
 
     <div class='i18n-helper' style='display: inline; background-color: #FAF9A7;'>Translated text</div>
 
-This provides a soft highlight for transalted strings, but this behavior can be
+This provides a soft highlight for translated strings, but this behavior can be
 modified within settings.py.
 
 
@@ -84,21 +87,22 @@ Graphical examples are sometimes the better way to understand how does something
 
 Fully translated templates
 
-<img src='https://dl-web.dropbox.com/get/Public/django-i18n-helper/Traslated1.png?w=c0f4b662'/>
 
-<img src='https://dl-web.dropbox.com/get/Public/django-i18n-helper/Traslated2.png?w=09afdc01'/>
+<img src='http://pictat.com/i/2012/8/22/39364traslated1.png'/>
+
+<img src='http://pictat.com/i/2012/8/22/11913traslated2.png'/>
 
 Partially translated templates. Note that it's also possible to see from the admin site which model fields haven't set the _verbose_name_ attribute to translate the field name.
 
-<img src='https://dl-web.dropbox.com/get/Public/django-i18n-helper/Untraslated1.jpg?w=258a0054'/>
+<img src='http://pictat.com/i/2012/8/22/23861untraslate.png'/>
 
-<img src='https://dl-web.dropbox.com/get/Public/django-i18n-helper/Untraslated2.png?w=0fbf93df'/>
+<img src='http://pictat.com/i/2012/8/22/21074untraslate.png'/>
 
 
 Disclaimer Notes
 ----------------
 
-The application should **only** be used when debugging code transalations, since it overrides the default Django HTML scaping mechanism and thus outputs unescaped (possibly undesired) code.
+The application should **only** be used when debugging code translations, since it overrides the default Django HTML scaping mechanism and thus outputs unescaped (possibly undesired) code.
 Besides, there are some warnings you should be aware of:
 
 * You will see weird HTML within you buttons or inputs if you have things like &lt;input type="text" value="{% trans "Search" %}" ...&gt; Then the wrapping HTML of your translations will be shown _within_ the inputs or buttons. This will happen for sure in the admin site.
@@ -106,3 +110,12 @@ Besides, there are some warnings you should be aware of:
 * Your database might not sync and show errors like "value too long for type character varying(50)". Set I18N_HELPER_DEBUG to False if this happens.
 
 * Your migrations might not work and show errors like "value too long for type character varying(50)". Set I18N_HELPER_DEBUG to False if this happens.
+
+* Some capitalization might be lost
+
+
+Tested with
+-----------
+
+* Django 1.4
+* Python 2.6.1
