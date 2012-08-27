@@ -112,9 +112,9 @@ Besides, there are some warnings you should be aware of:
 
 * You will see weird HTML within you buttons or inputs if you have things like &lt;input type="text" value="{% trans "Search" %}" ...&gt; Then the wrapping HTML of your translations will be shown _within_ the inputs or buttons. This will happen for sure in the admin site.
 
-* Your database might not sync and show errors like "value too long for type character varying(50)". Set I18N_HELPER_DEBUG to False if this happens.
+* Set I18N_HELPER_DEBUG to False before syncing your database, otherwise you might see errors like "value too long for type character varying(50)".
 
-* Your migrations might not work and show errors like "value too long for type character varying(50)". Set I18N_HELPER_DEBUG to False if this happens.
+* Set I18N_HELPER_DEBUG to False before running your migrations, otherwise you might see errors like "value too long for type character varying(50)". Set I18N_HELPER_DEBUG to False if this happens.
 
 * Some capitalization might be lost
 
