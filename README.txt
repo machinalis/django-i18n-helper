@@ -5,9 +5,6 @@ Provides a simple way to visualize translated strings in Django templates
 by wrapping translated content with custom HTML and CSS. Therefore and
 most important, helps you to visualize untraslated strings too.
 
-This is particularly useful when internationalization is being added to a
-project.
-
 
 How does it works
 -----------------
@@ -15,7 +12,7 @@ How does it works
 Django i18n helper is a common Django app that overriddes Django core functions
 on load to provide the desired behavior.
 
-The application will automatically detect when tests are being run and don't
+The application will automatically detect when tests are being run and won't
 override any methods in such a case to preserve tests integrity.
 
 
