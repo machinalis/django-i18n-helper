@@ -6,8 +6,8 @@ by wrapping translated content with custom HTML and CSS. Therefore and
 most important, helps you to visualize untraslated strings too.
 
 
-How does it works
------------------
+How does it work
+----------------
 
 Django i18n helper is a common Django app that overriddes Django core functions
 on load to provide the desired behavior.
@@ -47,7 +47,7 @@ modified within settings.py.
 Customization
 -------------
 
-Some configuration variables are provided on order to customize how you want the translated strings to be wrapped.
+Some configuration variables are provided in order to customize how you want the translated strings to be wrapped.
 
 #### I18N_HELPER_HTML
 
@@ -58,23 +58,23 @@ translation.
 
     I18N_HELPER_HTML = "<span class='highlight'>{0}</span>"
 
-If I18N_HELPER_HTMLis not set, the code used will be
+If **I18N_HELPER_HTML** is not set, the code used will be
 
     <div class='i18n-helper' style='display: inline; background-color: #FAF9A7;'>{0}</div> 
 
 
 #### I18N_HELPER_CLASS
 
-Defines the class to use for the HTML div if I18N_HELPER_HTML is not used. Defaults to "i18n-helper".
+Defines the class to use for the HTML div if **I18N_HELPER_HTML** is not used. Defaults to "i18n-helper".
 
     I18N_HELPER_CLASS = "my-custom-class"
 
 
 #### I18N_HELPER_STYLE
 
-Defines the inline CSS for the HTML div if no I18N_HELPER_HTML or
-I18N_HELPER_CLASS have been set (case in which it's assumed that the styles
-for the class provides the needed css). Defaults to ""display: inline; background-color: #FAF9A7;".
+Defines the inline CSS for the HTML div if no **I18N_HELPER_HTML** or
+**I18N_HELPER_CLASS** have been set (case in which it's assumed that the css 
+for the class provides the desired style). Defaults to "display: inline; background-color: #FAF9A7;".
 
     I18N_HELPER_CLASS = "font-weight: bold; background-color: yellow;"
 
@@ -98,7 +98,7 @@ Partially translated templates. Note that it's also possible to see from the adm
 <img src='http://pictat.com/i/2012/8/22/21074untraslate.png'/>
 
 
-Disclaimer Notes
+Disclaimer notes
 ----------------
 
 The application should **only** be used when "debugging" code translations, since it overrides the default Django HTML scaping mechanism and thus outputs unescaped (possibly undesired) code.
@@ -106,9 +106,9 @@ Besides, there are some warnings you should be aware of:
 
 * You will see weird HTML within you buttons or inputs if you have things like &lt;input type="text" value="{% trans "Search" %}" ...&gt; Then the wrapping HTML of your translations will be shown _within_ the inputs or buttons. This will happen for sure in the admin site.
 
-* Set I18N_HELPER_DEBUG to False before syncing your database, otherwise you might see errors like "value too long for type character varying(50)".
+* Set **I18N_HELPER_DEBUG** to False before syncing your database, otherwise you might see errors like "value too long for type character varying(50)".
 
-* Set I18N_HELPER_DEBUG to False before running your migrations, otherwise you might see errors like "value too long for type character varying(50)". Set I18N_HELPER_DEBUG to False if this happens.
+* Set **I18N_HELPER_DEBUG** to False before running your migrations, otherwise you might see errors like "value too long for type character varying(50)".
 
 * Some capitalization might be lost
 
