@@ -8,9 +8,6 @@ most important, helps you to visualize untraslated strings too.
 This is particularly useful when internationalization is being added to a
 project.
 
-Author: Santiago Gabriel Romero
-
-Contact: sromero@machinalis.com
 
 How does it works
 -----------------
@@ -124,3 +121,11 @@ Tested with
 
 * Django 1.4
 * Python 2.6.1
+
+
+Contact
+-------
+
+Author: Santiago Gabriel Romero
+
+Contact: sromero@machinalis.com
