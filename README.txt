@@ -110,6 +110,8 @@ Besides, there are some warnings you should be aware of:
 
 * Set **I18N_HELPER_DEBUG** to False before running your migrations, otherwise you might see errors like "value too long for type character varying(50)".
 
+* From version **0.1.1** this helper will only be enabled when running the **runserver** command, so you shouldn't need to worry about turning it off for doing syncdb, migrations, or anything.
+
 * Some capitalization might be lost
 
 

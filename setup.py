@@ -8,7 +8,7 @@ from distutils.core import setup
 
 setup(
     name='django-i18n-helper',
-    version='0.1',
+    version='0.1.1',
     description=u'A internationalization helper that highlights translated strings',
     long_description=__doc__,
     author = u'Santiago Gabriel Romero',
