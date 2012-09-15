@@ -116,8 +116,8 @@ Besides, there are some warnings you should be aware of:
 Tested with
 -----------
 
-* Django 1.4
-* Python 2.6.1
+* Django 1.3 / 1.4
+* Python 2.6.1 / 2.7.2
 
 
 Contact

@@ -1,7 +1,7 @@
 from django.utils.functional import lazy
 from django.utils.safestring import mark_safe
 from django.utils.encoding import is_protected_type
-from django.utils.safestring import SafeUnicode, SafeString
+from django.utils.safestring import SafeUnicode
 
 from django.conf import settings
 from wraptools import wraps
@@ -14,9 +14,9 @@ DEFAULT_I18N_CLASS = "i18n-helper"
 DEFAULT_I18N_STYLE = "display: inline; background-color: #FAF9A7;"
 
 I18N_HELPER_DEBUG = getattr(settings, 'I18N_HELPER_DEBUG', False)
-TESTING = sys.argv[1:2] == ['test']
-# Omit if tests are bein run
-if I18N_HELPER_DEBUG and not TESTING:
+RUNSERVER = sys.argv[1:2] == ['runserver']
+# Omit if not running development server
+if I18N_HELPER_DEBUG and RUNSERVER:
     """
     Translation debugging is set, so override django core functions and methods
     as necessary
@@ -78,7 +78,7 @@ if I18N_HELPER_DEBUG and not TESTING:
             # We're dealing with a literal, so it's already been "resolved"
             value = self.literal
         if self.translate:
-            if self.message_context:
+            if getattr(self, 'message_context', None):
                 return django.utils.translation.pgettext_lazy(
                     self.message_context, value)
             else:
