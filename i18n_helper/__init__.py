@@ -14,7 +14,7 @@ DEFAULT_I18N_CLASS = "i18n-helper"
 DEFAULT_I18N_STYLE = "display: inline; background-color: #FAF9A7;"
 
 I18N_HELPER_DEBUG = getattr(settings, 'I18N_HELPER_DEBUG', False)
-RUNSERVER = sys.argv[1:2] == ['runserver']
+RUNSERVER = sys.argv[1:2][0] in ['runserver', 'runserver_plus']
 # Omit if not running development server
 if I18N_HELPER_DEBUG and RUNSERVER:
     """
